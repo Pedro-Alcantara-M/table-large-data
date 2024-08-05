@@ -12,7 +12,7 @@ const TopBar = () => {
     >
       <Typography
         variant="overline"
-        style={{ fontWeight: "bold", fontSize: "24px" }}
+        style={{ fontWeight: "bold", fontSize: "24px", paddingInline: "10px" }}
         color="common.white"
       >
         Federal Motor Carrier Safety Administration

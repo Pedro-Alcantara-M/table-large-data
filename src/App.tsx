@@ -1,6 +1,6 @@
-import { Box, Chip, Stack, Typography } from "@mui/material";
-import {  GridColDef } from "@mui/x-data-grid";
-import {  useMemo } from "react";
+import { Box, Chip, Stack, Typography, Tooltip } from "@mui/material";
+import { GridColDef } from "@mui/x-data-grid";
+import { useMemo } from "react";
 import { format } from "date-fns";
 import { useGetTableData } from "./services/getTableData";
 import TableSkeleton from "./components/table/skeletonTable";
@@ -56,9 +56,11 @@ const columns: GridColDef<DataRow[number]>[] = [
           return (
             <Stack alignItems={"flex-start"} justifyItems={"center"} pt={1}>
               <Chip size="small" label="Authorized" color="info" />
-              <Typography pl={0.5} variant="caption" color={"common.black"}>
-                {authFor}
-              </Typography>
+              <Tooltip title={authFor}>
+                <Typography pl={0.5} variant="caption" color={"common.black"}>
+                  {authFor}
+                </Typography>
+              </Tooltip>
             </Stack>
           );
         }
@@ -110,13 +112,11 @@ function App() {
       }}
     >
       <TopBar />
-      {
-        loading ? (
-          <TableSkeleton />
-        ) : (
-         <StyledTable columns={columns} data={tableData} loading={loading}/>
-        )
-      }
+      {loading ? (
+        <TableSkeleton />
+      ) : (
+        <StyledTable columns={columns} data={tableData} loading={loading} />
+      )}
     </Box>
   );
 }

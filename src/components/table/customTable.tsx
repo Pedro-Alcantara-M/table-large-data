@@ -23,6 +23,7 @@ export const StyledTable: FC<TableProps> = ({ columns, data, loading }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center !important",
+        paddingInline: "10px",
         height: "100%",
         width: "100%",
       }}

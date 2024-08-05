@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { IFMSCA, ITableHeader } from "../type/fmsca.interface";
+
 export const useGetTableData = () => {
-  const [data, setData] = useState<{ data: any[]; status?: number }>({
+  const [data, setData] = useState<{ data: IFMSCA[]; status?: number }>({
     data: [],
     status: undefined,
   });
@@ -23,7 +25,7 @@ export const useGetTableData = () => {
         const json = JSON.parse(
           response.data.substring(47, response.data.length - 2)
         );
-        const headers = json.table.cols.map((header: any) => header.label);
+        const headers = json.table.cols.map((header: ITableHeader) => header.label);
         const row = json.table.rows.map((row: any) => row.c);
 
         const formattedArray = row.map((entry: any) => {
@@ -33,7 +35,6 @@ export const useGetTableData = () => {
           }
           return result;
         });
-
         resp.data = formattedArray;
       })
       .catch((error) => {

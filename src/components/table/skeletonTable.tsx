@@ -19,8 +19,7 @@ const TableSkeleton = () => {
         justifyContent: "center",
         height: "100%",
         width: "100%",
-        paddingLeft: "auto",
-        marginRight: "auto",
+        paddingInline: "10px",
       }}
     >
       <Table
