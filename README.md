@@ -20,8 +20,15 @@ To run the project:
 ```http
  cd table-large-data
  ```
+and
+
 ```http
-  npm install or yarn install
+  npm install
+```
+ or
+
+ ```http
+  yarn install
 ```
 
 
