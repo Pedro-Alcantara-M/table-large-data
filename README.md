@@ -18,8 +18,10 @@ To run the project:
 3- Install dependencies: 
 
 ```http
- cd ptable-large-data
- npm install or yarn install
+ cd table-large-data
+ ```
+```http
+  npm install or yarn install
 ```
 
 
